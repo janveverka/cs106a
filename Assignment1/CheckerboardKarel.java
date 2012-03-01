@@ -11,6 +11,6 @@ import stanford.karel.*;
 
 public class CheckerboardKarel extends SuperKarel {
 
-    // You fill in this part
+   // You fill in this part
 
 }
