@@ -13,26 +13,28 @@ import stanford.karel.*;
 
 public class SuperKarelWithCompass extends SuperKarel {
 
-	/**
-	 * Instructs Karel to move one step east.
-	 */
-	private void moveEast() {
-		if (facingEast()) {
-			move();
-		} else {
-			turnLeft();
-			moveEast();
-			turnRight();
-		}
-	}
-	
-	/**
-	 * Instructs Karel to turn east.
-	 */
-	private void turnEast() {
-		while (notFacingEast()) {
-			turnLeft();
-		}
-	}
-	
+/**
+ * Instructs Karel to move one step east.
+ * Precondition: There is no wall to the east.
+ * Postcondition: Karel faces the same direction as before.
+ */
+    private void moveEast() {
+        if (facingEast()) {
+            move();
+        } else {
+            turnLeft();
+            moveEast();
+            turnRight();
+        }
+    }
+
+/**
+ * Instructs Karel to turn east.
+ */
+    private void turnEast() {
+        while (notFacingEast()) {
+            turnLeft();
+        }
+    }
+    
 }
