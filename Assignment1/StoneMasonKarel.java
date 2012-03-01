@@ -10,9 +10,9 @@ import stanford.karel.*;
 
 public class StoneMasonKarel extends SuperKarel {
 
-   /**
-    * Instructs Karel where to start the execution.
-    */
+/**
+ * Instructs Karel where to start the execution.
+ */
    public void run() {
       repairColumn();      
       while(frontIsClear()) {
@@ -21,9 +21,9 @@ public class StoneMasonKarel extends SuperKarel {
       }
    }
    
-   /**
-    * Repairs a column at the bottom of which Karel is.
-    */
+/**
+ * Repairs a column at the bottom of which Karel is.
+ */
    private void repairColumn() {
       repairCorner();
       turnNorth();
@@ -36,9 +36,9 @@ public class StoneMasonKarel extends SuperKarel {
       turnEast();
    }
    
-   /**
-    * Asks Karel to move to the next column four corners East. 
-    */
+/**
+ * Asks Karel to move to the next column four corners East. 
+ */
    private void moveToTheNextColumn() {
       turnEast();
       for (int i=0; i<4; ++i) {
@@ -46,37 +46,37 @@ public class StoneMasonKarel extends SuperKarel {
       }
    }
    
-   /**
-    * Turns Karel North independent of his current orientation.
-    */
+/**
+ * Turns Karel North independent of his current orientation.
+ */
    private void turnNorth() {
       while(notFacingNorth()) {
          turnLeft();
       }
    }
 
-   /**
-    * Turns Karel East independent of his current orientation.
-    */
+/**
+ * Turns Karel East independent of his current orientation.
+ */
    private void turnEast() {
       while(notFacingEast()) {
          turnLeft();
       }
    }
 
-   /**
-    * Repairs current corner.  Places a beeper here iff there 
-    * are no beepers present.
-    */
+/**
+ * Repairs current corner.  Places a beeper here iff there 
+ * are no beepers present.
+ */
    private void repairCorner() {
       if (noBeepersPresent()) {
          putBeeper();
       }
    }
    
-   /**
-    * Asks Karel to move all the way to the wall in front of him.
-    */
+/**
+ * Asks Karel to move all the way to the wall in front of him.
+ */
    private void moveToWall() {
       while (frontIsClear()) {
          move();
